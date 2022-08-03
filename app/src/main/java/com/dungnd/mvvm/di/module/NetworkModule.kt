@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @Module(includes = [ViewModelModule::class])
 class NetworkModule {
     companion object {
-        private const val BASE_URL_NEW = "https://api.jikan.moe/v3/"
+        private const val BASE_URL_NEW = "https://jsonplaceholder.typicode.com/"
     }
 
     @Singleton

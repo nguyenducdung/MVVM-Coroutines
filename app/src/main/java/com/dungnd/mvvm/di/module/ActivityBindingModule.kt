@@ -1,5 +1,6 @@
 package com.dungnd.mvvm.di.module
 
+import com.dungnd.mvvm.ui.detail.DetailFragment
 import com.dungnd.mvvm.ui.home.HomeFragment
 import com.dungnd.mvvm.ui.main.MainActivity
 import com.dungnd.mvvm.ui.splash.SplashFragment
@@ -17,4 +18,7 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun bindHomeFragment(): HomeFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindDetailFragment(): DetailFragment
 }
