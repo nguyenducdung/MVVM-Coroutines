@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import javax.inject.Inject
 import javax.inject.Singleton
 
+//Anotation của dagger
 @Singleton
 class AppPreferences @Inject constructor(private val preferences: SharedPreferences) {
     fun saveName(name: String) {

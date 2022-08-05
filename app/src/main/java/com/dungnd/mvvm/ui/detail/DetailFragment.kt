@@ -10,7 +10,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
     override fun viewModelClass(): Class<DetailViewModel> = DetailViewModel::class.java
 
     override fun initView() {
-        val title = arguments?.getString("key") ?:""
-        binding.tvDetail.text = title
+//        val title = arguments?.getString("key") ?:""
+//        binding.tvDetail.text = title
+
+        viewModel.user.observe(this) {
+            if (it != null) {
+                binding.tvDetail.text = "${it.name}_${it.address}"
+            }
+        }
+        mainViewModel.phone.postValue("fsafjaskfjaksdf")
     }
 }

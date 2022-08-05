@@ -1,6 +1,7 @@
 package com.dungnd.mvvm.di.module
 
 import com.dungnd.mvvm.ui.detail.DetailFragment
+import com.dungnd.mvvm.ui.edit.EditProfileFragment
 import com.dungnd.mvvm.ui.home.HomeFragment
 import com.dungnd.mvvm.ui.main.MainActivity
 import com.dungnd.mvvm.ui.splash.SplashFragment
@@ -21,4 +22,7 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun bindDetailFragment(): DetailFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindEditProfileFragment(): EditProfileFragment
 }

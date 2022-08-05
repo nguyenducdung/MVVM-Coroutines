@@ -8,12 +8,15 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.dungnd.mvvm.ui.main.MainViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
+//Những gì dùng chung trong fragment
 abstract class BaseFragment<T : ViewDataBinding, M : BaseViewModel> : DaggerFragment() {
     protected lateinit var binding: T
     protected lateinit var viewModel: M
+    protected lateinit var mainViewModel: MainViewModel
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -36,6 +39,15 @@ abstract class BaseFragment<T : ViewDataBinding, M : BaseViewModel> : DaggerFrag
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel = ViewModelProvider(this, viewModelFactory)[viewModelClass()]
+        mainViewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
         initView()
+    }
+
+    fun showLoading() {
+        (activity as? BaseActivity<*, *>)?.showLoading()
+    }
+
+    fun hiddenLoading() {
+        (activity as? BaseActivity<*, *>)?.hiddenLoading()
     }
 }
