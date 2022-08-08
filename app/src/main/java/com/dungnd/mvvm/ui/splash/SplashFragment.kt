@@ -13,8 +13,16 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
     override fun viewModelClass(): Class<SplashViewModel> = SplashViewModel::class.java
 
     override fun initView() {
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            findNavController().navigate(R.id.action_splashFragment_to_editProfileFragment)
+//        }, 2000)
+        val a = 0
+        val b = 1
+        val c = a+ b
         Handler(Looper.getMainLooper()).postDelayed({
+            //Thực hiện các lệnh sau khoảng thời gian là 3000 mili giây
             findNavController().navigate(R.id.action_splashFragment_to_editProfileFragment)
-        }, 2000)
+        }, 3000)
+        val d= a +c
     }
 }

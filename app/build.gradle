@@ -104,4 +104,6 @@ dependencies {
 
     //preference
     implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
 }

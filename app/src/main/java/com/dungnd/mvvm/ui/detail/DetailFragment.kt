@@ -12,12 +12,18 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
     override fun initView() {
 //        val title = arguments?.getString("key") ?:""
 //        binding.tvDetail.text = title
-
+        binding.toolbar.tvTitle.text = "HIHI"
+        binding.toolbar.viewModel = mainViewModel
         viewModel.user.observe(this) {
             if (it != null) {
                 binding.tvDetail.text = "${it.name}_${it.address}"
             }
         }
         mainViewModel.phone.postValue("fsafjaskfjaksdf")
+        binding.tvDetail.post {
+            //lấy giá trị chiều cao, chiều dài của view
+            val chieuCao = binding.tvDetail.height
+            val chieuDai = binding.tvDetail.width
+        }
     }
 }
