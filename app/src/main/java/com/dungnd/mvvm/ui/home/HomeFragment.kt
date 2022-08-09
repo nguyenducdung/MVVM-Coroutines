@@ -6,6 +6,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.dungnd.mvvm.R
 import com.dungnd.mvvm.databinding.FragmentHomeBinding
+import com.dungnd.mvvm.ui.base.BaseActivity
 import com.dungnd.mvvm.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
@@ -26,12 +27,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         }
         binding.rcvData.adapter = adapter
         viewModel.name.observe(this) {
-            binding.tvName.text = it
+//            binding.tvName.text = it
         }
         viewModel.photoList.observe(this) {
-            binding.tvName.text = it.size.toString()
+//            binding.tvName.text = it.size.toString()
             adapter.photoList = it
             adapter.notifyDataSetChanged()
+        }
+
+        //Lắng nghe khi dữ liệu thay đổi(hoặc có dữ liệu mới từ api)
+        viewModel.productList.observe(this) {
+            binding.tvName.text = it?.get(0)?.title ?:""
+        }
+
+        viewModel.isLoading.observe(this) {
+            if (it == true) {
+                (activity as? BaseActivity<*, *>)?.showLoading()
+            } else {
+                (activity as? BaseActivity<*, *>)?.hiddenLoading()
+            }
         }
     }
 

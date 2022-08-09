@@ -8,6 +8,7 @@ android {
     compileSdk 32
 
     defaultConfig {
+        //nguyên tắc id: com.<Tên công ty>.<tên app>
         applicationId "com.dungnd.mvvm"
         minSdk 23
         targetSdk 32
@@ -17,8 +18,27 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
+        debug {
+            storeFile file("../keystore/abc.jks")
+            storePassword "123456"
+            keyAlias "abc"
+            keyPassword "123456"
+        }
         release {
+            storeFile file("../keystore/abc.jks")
+            storePassword "123456"
+            keyAlias "abc"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfigs.debug
+        }
+        release {
+            signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
