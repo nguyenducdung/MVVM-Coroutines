@@ -55,11 +55,11 @@ abstract class BaseActivity<T : ViewDataBinding, M : BaseViewModel> : DaggerAppC
     }
 
     fun showLoading() {
-        dialog?.show()
+//        dialog?.show()
     }
 
     fun hiddenLoading() {
-        dialog?.dismiss()
+//        dialog?.dismiss()
     }
 
 }
