@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "408263645205",
+    "project_id": "mvvm-coroutines",
+    "storage_bucket": "mvvm-coroutines.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408263645205:android:dc25ca929287b74f33d61c",
+        "android_client_info": {
+          "package_name": "com.dungnd.mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408263645205-vcmgqu3mc4vmg8f441hgkbpaa4clfoht.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dungnd.mvvm",
+            "certificate_hash": "c4beb01fba278829524007a2bbf34d9d170bec65"
+          }
+        },
+        {
+          "client_id": "408263645205-m7hk0sf1guc41di45rcph2sg8nfut6be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPeNWYnxvjf_c_jlMl01-MgrMEnD5zklY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408263645205-m7hk0sf1guc41di45rcph2sg8nfut6be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
