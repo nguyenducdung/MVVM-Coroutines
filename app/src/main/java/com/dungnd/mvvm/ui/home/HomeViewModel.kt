@@ -34,7 +34,7 @@ class HomeViewModel @Inject constructor(
 
         //Cách 1: Gọi trong hàm khởi tạo của viewmodel, chỉ đc 1 lần
         //Áp dụng với api k truyền tham số, vì lý do khác
-        getAllProducts()
+//        getAllProducts()
     }
 
     private fun getAllPhoto() {
