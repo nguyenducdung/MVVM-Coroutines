@@ -24,7 +24,7 @@ import javax.net.ssl.X509TrustManager
 @Module(includes = [ViewModelModule::class])
 class NetworkModule {
     companion object {
-        private const val BASE_URL_NEW = "https://fakestoreapi.com/"
+        private const val BASE_URL_NEW = "https://fakerapi.it/api/v1/"
     }
 
     @Singleton
