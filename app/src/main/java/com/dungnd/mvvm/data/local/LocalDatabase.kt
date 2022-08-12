@@ -4,16 +4,19 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.dungnd.mvvm.data.local.dao.FavouriteQuoteDao
 import com.dungnd.mvvm.data.local.dao.ItemDao
+import com.dungnd.mvvm.data.local.dao.UserDao
 import com.dungnd.mvvm.data.local.model.FavouriteQuote
 import com.dungnd.mvvm.data.local.model.Item
+import com.dungnd.mvvm.data.local.model.User
 
 @Database(
-    entities = [FavouriteQuote::class, Item::class],
-    version = 1,
+    entities = [FavouriteQuote::class, Item::class, User::class],
+    version = 2,
     exportSchema = false
 )
 abstract class LocalDatabase : RoomDatabase() {
 
     abstract fun favouriteQuoteDao(): FavouriteQuoteDao
     abstract fun itemDao(): ItemDao
+    abstract fun userDao(): UserDao
 }

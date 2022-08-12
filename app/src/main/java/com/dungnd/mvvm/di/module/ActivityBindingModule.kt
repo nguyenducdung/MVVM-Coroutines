@@ -3,7 +3,9 @@ package com.dungnd.mvvm.di.module
 import com.dungnd.mvvm.ui.chuabuoi11.ProductListFragment
 import com.dungnd.mvvm.ui.detail.DetailFragment
 import com.dungnd.mvvm.ui.home.HomeFragment
+import com.dungnd.mvvm.ui.login.LoginFragment
 import com.dungnd.mvvm.ui.main.MainActivity
+import com.dungnd.mvvm.ui.profile.ProfileFragment
 import com.dungnd.mvvm.ui.splash.SplashFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -25,4 +27,10 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun bindProductList(): ProductListFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindLoginFragment(): LoginFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindProfileFragment(): ProfileFragment
 }
