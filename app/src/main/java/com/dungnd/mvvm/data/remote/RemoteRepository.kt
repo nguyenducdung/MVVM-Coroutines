@@ -1,5 +1,6 @@
 package com.dungnd.mvvm.data.remote
 
+import com.dungnd.mvvm.data.remote.model.ProductResponse
 import com.dungnd.mvvm.data.remote.model.AddressData
 import com.dungnd.mvvm.data.remote.model.CreateProductRequest
 import com.dungnd.mvvm.data.remote.model.Photo
@@ -37,5 +38,9 @@ class RemoteRepository @Inject constructor(
             category = "electronic"
         )
         return animeService.createProduct(request)
+    }
+
+    suspend fun getAllProductV2(): ProductResponse {
+        return animeService.getAllProductsV2(10)
     }
 }

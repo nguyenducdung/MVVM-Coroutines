@@ -2,22 +2,50 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <import type="com.google.gson.Gson"/>
+
+        <variable
+            name="productResponse"
+            type="com.dungnd.mvvm.data.remote.model.Product" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_margin="16dp"
+            image_url="@{productResponse.image}"
             android:id="@+id/ivImage"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:adjustViewBounds="true"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tvTitle"
+            android:layout_marginEnd="16dp"
+            android:layout_alignTop="@id/ivImage"
             android:layout_width="match_parent"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="#E40000"
+            android:ellipsize="end"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/ivImage"
+            android:text="@{productResponse.name}"
+            android:textSize="20sp" />
+
+        <TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_toEndOf="@id/ivImage"
+            android:text="@{productResponse.description}"
             android:textSize="20sp" />
 
     </RelativeLayout>

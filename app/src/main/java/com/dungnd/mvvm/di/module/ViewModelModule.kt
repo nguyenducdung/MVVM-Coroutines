@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dungnd.mvvm.di.viewmodel.ViewModelFactory
 import com.dungnd.mvvm.di.viewmodel.ViewModelKey
+import com.dungnd.mvvm.ui.chuabuoi11.ProductListViewModel
 import com.dungnd.mvvm.ui.detail.DetailViewModel
 import com.dungnd.mvvm.ui.home.HomeViewModel
 import com.dungnd.mvvm.ui.main.MainViewModel
@@ -37,5 +38,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DetailViewModel::class)
     internal abstract fun detailViewModel(viewModel: DetailViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProductListViewModel::class)
+    internal abstract fun productListViewModel(viewModel: ProductListViewModel): ViewModel
 
 }
