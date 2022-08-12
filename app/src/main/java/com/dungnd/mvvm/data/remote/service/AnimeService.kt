@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface AnimeService {
 
-    @GET("photos")
+    @GET("photos/a")
     suspend fun getAllPhoto(): List<Photo>
 }

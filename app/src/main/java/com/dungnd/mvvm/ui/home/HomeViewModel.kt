@@ -15,6 +15,7 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
     var name = MutableLiveData<String>()
     var photoList = MutableLiveData<List<Photo>>()
+    var isLoading = MutableLiveData(false)
 
     init {
         name.value = appPreferences.getName()
@@ -24,7 +25,13 @@ class HomeViewModel @Inject constructor(
 
     private fun getAllPhoto() {
         viewModelScope.launch {
-            photoList.value = remoteRepository.getAllPhotos()
+            isLoading.value = true
+            try {
+                photoList.value = remoteRepository.getAllPhotos()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            isLoading.value = false
         }
     }
 }
