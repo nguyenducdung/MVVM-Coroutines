@@ -13,4 +13,8 @@ class AppPreferences @Inject constructor(private val preferences: SharedPreferen
     fun getName(): String {
         return preferences.getString("name", "Nguyễn Đức Dũng") ?: ""
     }
+
+    fun saveToken(token: String) {
+        preferences.edit().putString("token", token).apply()
+    }
 }
