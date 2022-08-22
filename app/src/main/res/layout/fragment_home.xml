@@ -9,11 +9,16 @@
         android:orientation="vertical"
         tools:context=".ui.home.HomeFragment">
 
+        <com.dungnd.mvvm.ui.widget.ActionBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action_bar_title="@string/androidx_startup" />
+
         <EditText
             android:id="@+id/edtName"
-            android:inputType="number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/tvName"

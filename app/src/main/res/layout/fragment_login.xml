@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,10 +9,28 @@
         android:paddingEnd="16dp"
         tools:context=".ui.login.LoginFragment">
 
+        <com.dungnd.mvvm.ui.widget.ActionBarViewBinding
+            android:id="@+id/abvActionBarV2"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:action_bar2_enable_left="true"
+            app:action_bar2_src_left="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:action_bar2_title="Đây là title 9" />
+
+        <com.dungnd.mvvm.ui.widget.ActionBarView
+            android:id="@+id/abvActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:visibility="gone"
+            app:action_bar_enable_left="true"
+            app:action_bar_src_left="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:action_bar_title="Đây là title" />
+
         <EditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/abvActionBarV2"
             android:inputType="textEmailAddress"
             android:maxLength="50"
             android:maxLines="1" />

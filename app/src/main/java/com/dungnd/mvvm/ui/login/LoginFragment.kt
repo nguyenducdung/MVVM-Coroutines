@@ -4,6 +4,7 @@ import android.app.Activity
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.dungnd.mvvm.R
 import com.dungnd.mvvm.databinding.FragmentLoginBinding
@@ -52,6 +53,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
             if (it == true) {
                 findNavController().navigate(R.id.action_loginFragment_to_profileFragment)
             }
+        }
+        binding.abvActionBar.setTitleColor(R.color.purple_500)
+        binding.abvActionBar.setOnClickImageLeft {
+            findNavController().popBackStack()
+            Toast.makeText(requireContext(), "Tôi vừa bấm back", Toast.LENGTH_LONG).show()
         }
     }
 
