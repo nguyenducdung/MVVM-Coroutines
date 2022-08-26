@@ -12,5 +12,4 @@ abstract class AppModule {
     @Binds
     @Singleton
     abstract fun provideContext(application: Application): Context
-
 }
